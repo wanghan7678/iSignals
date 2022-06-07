@@ -51,6 +51,7 @@ public class RealTimeService
     protected StockRealTime parseSinajsResult(String response)
     {
         response = response.replace("\"", "");
+        System.out.println("response=" + response);
         String[] responses = response.split("=");
         if (responses.length != 2)
         {
@@ -70,28 +71,30 @@ public class RealTimeService
         stockRealTime.setTodayLow(Util.readToFloat(results[5]));
         stockRealTime.setBidPrice(Util.readToFloat(results[6]));
         stockRealTime.setAuctionPrice(Util.readToFloat(results[7]));
-        stockRealTime.setBid1Shares(Util.readToFloat(results[8]));
-        stockRealTime.setBid1Price(Util.readToFloat(results[9]));
-        stockRealTime.setBid2Shares(Util.readToFloat(results[10]));
-        stockRealTime.setBid2Price(Util.readToFloat(results[11]));
-        stockRealTime.setBid3Shares(Util.readToFloat(results[12]));
-        stockRealTime.setBid3Price(Util.readToFloat(results[13]));
-        stockRealTime.setBid4Shares(Util.readToFloat(results[14]));
-        stockRealTime.setBid4Price(Util.readToFloat(results[15]));
-        stockRealTime.setBid5Shares(Util.readToFloat(results[16]));
-        stockRealTime.setBid5Price(Util.readToFloat(results[17]));
-        stockRealTime.setAuction1Shares(Util.readToFloat(results[18]));
-        stockRealTime.setAuction1Price(Util.readToFloat(results[19]));
-        stockRealTime.setAuction2Shares(Util.readToFloat(results[20]));
-        stockRealTime.setAuction2Price(Util.readToFloat(results[21]));
-        stockRealTime.setAuction3Shares(Util.readToFloat(results[22]));
-        stockRealTime.setAuction3Price(Util.readToFloat(results[23]));
-        stockRealTime.setAuction4Shares(Util.readToFloat(results[24]));
-        stockRealTime.setAuction4Price(Util.readToFloat(results[25]));
-        stockRealTime.setAuction5Shares(Util.readToFloat(results[26]));
-        stockRealTime.setAuction5Price(Util.readToFloat(results[27]));
-        stockRealTime.setDate(results[28]);
-        stockRealTime.setTime(results[29]);
+        stockRealTime.setTradedAmounts(Util.readToFloat(results[8]));
+        stockRealTime.setTradedShares(Util.readToFloat(results[9]));
+        stockRealTime.setBid1Shares(Util.readToFloat(results[10]));
+        stockRealTime.setBid1Price(Util.readToFloat(results[11]));
+        stockRealTime.setBid2Shares(Util.readToFloat(results[12]));
+        stockRealTime.setBid2Price(Util.readToFloat(results[13]));
+        stockRealTime.setBid3Shares(Util.readToFloat(results[14]));
+        stockRealTime.setBid3Price(Util.readToFloat(results[15]));
+        stockRealTime.setBid4Shares(Util.readToFloat(results[16]));
+        stockRealTime.setBid4Price(Util.readToFloat(results[17]));
+        stockRealTime.setBid5Shares(Util.readToFloat(results[18]));
+        stockRealTime.setBid5Price(Util.readToFloat(results[19]));
+        stockRealTime.setAuction1Shares(Util.readToFloat(results[20]));
+        stockRealTime.setAuction1Price(Util.readToFloat(results[21]));
+        stockRealTime.setAuction2Shares(Util.readToFloat(results[22]));
+        stockRealTime.setAuction2Price(Util.readToFloat(results[23]));
+        stockRealTime.setAuction3Shares(Util.readToFloat(results[24]));
+        stockRealTime.setAuction3Price(Util.readToFloat(results[25]));
+        stockRealTime.setAuction4Shares(Util.readToFloat(results[26]));
+        stockRealTime.setAuction4Price(Util.readToFloat(results[27]));
+        stockRealTime.setAuction5Shares(Util.readToFloat(results[28]));
+        stockRealTime.setAuction5Price(Util.readToFloat(results[29]));
+        stockRealTime.setDate(results[30]);
+        stockRealTime.setTime(results[31]);
         return stockRealTime;
     }
 

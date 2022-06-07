@@ -27,8 +27,10 @@ public class StockRealTimeResource
     public ResponseEntity<StockRealTime> getStockRealTimeByTsCode(@PathVariable("tscode") String tsCode) throws Exception
     {
         StockRealTime stockRealTime = realTimeService.getStockRealTime(tsCode);
-        stockRealTime.setName(TushareUtil.getNameFromTsCode(tsCode));
-        stockRealTime.setCode(TushareUtil.getCodeFromTsCode(tsCode));
+        if (stockRealTime != null)
+        {
+            stockRealTime.setCode(tsCode);
+        }
         return new ResponseEntity<>(stockRealTime, HttpStatus.OK);
     }
 

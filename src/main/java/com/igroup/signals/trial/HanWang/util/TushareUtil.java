@@ -45,24 +45,5 @@ public class TushareUtil {
         return gson.toJson(requestMap);
     }
 
-    public static String getNameFromTsCode(String tsCode)
-    {
-        String[] parts = tsCode.split(".");
-        if (parts.length != 2)
-        {
-            return null;
-        }
-        return parts[1];
-    }
-
-    public static String getCodeFromTsCode(String tsCode)
-    {
-        String[] parts = tsCode.split(".");
-        if (parts.length != 2)
-        {
-            return null;
-        }
-        return parts[0];
-    }
 }
 
