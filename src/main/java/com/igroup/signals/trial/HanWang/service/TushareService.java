@@ -30,7 +30,6 @@ public class TushareService
     public StockCompany getStockCompanyByTscode(String tscode) throws Exception
     {
         String requestBody = TushareUtil.getStockCompanyByTscode(tscode);
-
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(URI.create(PropertiesUtil.getTushareApiUrl()))
                 .timeout(Duration.ofMinutes(2))

@@ -32,7 +32,6 @@ public class RealTimeService
     public StockRealTime getStockRealTime(String tsCode) throws Exception
     {
         String url = SinajsUtil.getRequestUrl(tsCode);
-        System.out.println("tscode= " + tsCode + ", " + url);
         if (url == null)
         {
             return null;
@@ -51,7 +50,6 @@ public class RealTimeService
     protected StockRealTime parseSinajsResult(String response)
     {
         response = response.replace("\"", "");
-        System.out.println("response=" + response);
         String[] responses = response.split("=");
         if (responses.length != 2)
         {
