@@ -16,4 +16,5 @@ public interface StockBasicRepo extends JpaRepository<StockBasic, Long>
     @Query(value = "SELECT *  FROM stock_basic b WHERE ts_code like %?1% " +
             "OR name like %?1% LIMIT 1", nativeQuery = true)
     StockBasic findStockBasicBySearch(String searchQuery);
+
 }

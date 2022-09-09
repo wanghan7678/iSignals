@@ -21,6 +21,7 @@ public class HanWangApplication {
 	{
 		CorsConfiguration corsConfiguration = new CorsConfiguration();
 		corsConfiguration.setAllowCredentials(true);
+		//corsConfiguration.setAllowedOrigins(Arrays.asList("http://167.86.97.204:4200"));
 		corsConfiguration.setAllowedOrigins(Arrays.asList("http://localhost:4200"));
 		corsConfiguration.setAllowedHeaders(Arrays.asList("Origin", "Access-Control-Allow-Origin",
 				"Content-Type", "Accept", "Authorization", "Origin, Accept", "X-Requested-With",
